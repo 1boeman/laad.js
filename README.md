@@ -1,8 +1,3 @@
-laad.js
-=======
-
-Pretty simple asynchronous script loading - laad.js
-
 JavaScript script loading libraries  (yep-nope.js, require.js, Lab.js, head.js $script.js, etc.js, etc.js) are quite  ubiquitous nowadays.  
 In fact there's so many that the time it takes to compare them all is more than enough to write your own.
 
@@ -43,5 +38,15 @@ laad.js(['path/to/script2.js','path/to/script3.js','path/to/script4.js'],functio
 	alert('loaded all of them');
 })
 ```
+Use the pathConfig property to make abbreviations for paths in loading statements:
 
-
+```javascript
+laad.pathConfig = {
+	"jqui"		:"js/jquery-ui-1.9.2.custom.min.js",
+	"main"		:"js/main.js"
+};
+laad.js('jqui');
+laad.wait('main',function(){
+	alert('loaded'); 
+});
+```
