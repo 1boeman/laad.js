@@ -22,12 +22,13 @@ or without callback:
 laad.js('path/to/script.js')
 ```
 
-Load another script but wait for the previous script to finish loading (for dependency's sake):
+Load another script but wait for the previous queued script to finish loading (for dependency's sake):
 
 ```javascript
+laad.js('path/to/library.js');
 laad.wait('path/to/script2.js',function(){
 	alert('loaded');
-})
+});
 ```
 
 add a bunch of (mutually independent(!)) scripts asynchronously and execute a single callback when they've all finished loading:
